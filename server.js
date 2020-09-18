@@ -42,7 +42,7 @@ app.use('/toolow', postsController)
 
 // Routes
 app.get('/' , (req, res) => {
-  res.send('/toolow');
+  res.redirect('/toolow');
 });
 
 
