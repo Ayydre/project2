@@ -12,8 +12,8 @@ module.exports = [
     car: 'Hyundai Genesis',
     decription: "Eric's widebody Genesis. Running Airlift 3P bags, Enkei Algernon 3pc wheels and a wide body kit.",
     img: 'https://i.imgur.com/1IIdRvN.jpg',
-    img2: ,
-    img3:
+    img2: '',
+    img3: ''
   },
   {
     name: 'Jon Salavador',
@@ -21,6 +21,6 @@ module.exports = [
     decription: "Jon's not your average Camaro. Running BC Racing coilovers and Work VS-XX 3px wheels.",
     img: 'https://i.imgur.com/TiLsJLC.jpg',
     img2: 'https://i.imgur.com/X2gwdb6.jpg',
-    img3:
+    img3: ''
   }
 ]

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+      <div class="container">
+        <div class="posts">
+          <% for(let key in posts) { %>
+            <div class="user-post">
+              <a href="<%=posts[key].id;%>"><img src="<%=posts[key].img;%>" alt="car image"></a>
+              <a href="<%=posts[key].id;%>"><h2 class="info"><%=posts[key].name;%>'s <%=posts[key].car;%></h2></a>
+            </div>
+          <% } %>
+        </div>
+      </div>
+    </body>
+</html>
