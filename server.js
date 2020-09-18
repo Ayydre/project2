@@ -17,7 +17,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 // Connect to Mongo &
 // Fix Depreciation Warnings from Mongoose
 // May or may not need these depending on your Mongoose version
-mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
 );
 
 // Error / success
@@ -37,10 +37,12 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
+const postsController = require('.controllers/posts_controller.js')
+app.use('/posts', postsController)
 
 // Routes
 app.get('/' , (req, res) => {
-  res.send('Hello World!');
+  res.send('/toolow');
 });
 
 
