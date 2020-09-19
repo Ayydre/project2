@@ -18,7 +18,7 @@ posts.get('/new', (req, res) => {
 // edit
 posts.get('/:id/edit', (req, res) => {
   Post.findById(req.params.id, (error, foundPost) => {
-    res.render('posts/edit.js', {
+    res.render('posts/edit.ejs', {
       post: foundPost
     });
   });
@@ -31,16 +31,28 @@ posts.delete('/:id', (req, res) => {
   });
 });
 
-// update
+// show
 posts.get('/:id', (req, res) => {
+  Post.findById(req.params.id, (error, foundPost) => {
+    res.render(
+      'posts/show.ejs', {
+        post: foundPost
+    })
+  })
+})
+
+// update
+posts.put('/:id', (req, res) => {
   Post.findByIdAndUpdate(req.params.id, req.body, {new: true}, (error, updatedModel) => {
-    res.redirect('/toolow')
+    res.redirect('/toolow/' + req.params.id)
   });
 });
 
-// show
-posts.get('/:id', (req, res) => {
-  res.redirect('posts/show.ejs')
+// create
+posts.post('/', (req, res) => {
+  Post.create(req.body, (error, createdPost) => {
+    res.redirect('/toolow')
+  })
 })
 
 // index

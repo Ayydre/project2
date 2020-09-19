@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const postSchema = new mongoose.Schema({
   name: { type: String, required: true },
   car: { type: String, required: true },
-  decription: String,
+  description: String,
   img: { type: String, required: true },
   img2: String,
   img3: String
