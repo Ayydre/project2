@@ -3,18 +3,22 @@
     <!-- ===========HEAD============= -->
     <%- include ('../partials/head.ejs') %>
     <!-- ============================ -->
-    <nav>
-      <%- include ('../partials/nav.ejs') %>
-    </nav>
     <body>
+     <div class="header">
+      <a href="/toolow" class="logo">TooLowForComfort</a>
+      </div>
+      <nav>
+        <%- include ('../partials/nav.ejs') %>
+      </nav>
       <div class="container">
         <div class="posts">
           <% for(let key in posts) { %>
             <div class="user-post">
-              <a href="/toolow/<%=posts[key].id;%>" class="img"><img src="<%=posts[key].img;%>" alt="car image" class="img"></a>
-              <a href="/toolow/<%=posts[key].id;%>"><h2 class="info"><%=posts[key].name;%>'s <%=posts[key].car;%></h2></a>
+            <a href="/toolow/<%=posts[key].id;%>" class="img"><img src="<%=posts[key].img;%>" alt="car image" class="img"></a>
+            <a href="/toolow/<%=posts[key].id;%>" class="info"><h2 class="info"><%=posts[key].name;%>'s <%=posts[key].car;%></h2></a>
             </div>
           <% } %>
+          </div>
         </div>
       </div>
     </body>

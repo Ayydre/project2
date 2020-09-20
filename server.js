@@ -44,7 +44,6 @@ app.use(
   })
 )
 
-
 const postsController = require('./controllers/posts_controller.js')
 app.use('/toolow', postsController)
 const userController = require('./controllers/users_controller.js')
