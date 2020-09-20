@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<!-- ===========HEAD============= -->
+<%- include ('../partials/head.ejs') %>
+<!-- ============================ -->
+  <body>
+    <nav>
+      <%- include ('../partials/nav.ejs') %>
+    </nav>
+    <div class="container">
+      <h1>Log In</h1>
+      <form action="/sessions" method="POST">
+        User Name: <input type="text" name="username" required/>
+        Password: <input type="password" name="password" />
+        <input type="submit" value="Submit">
+      </form>
+      <br/>
+      <a href="/users/new">Don't have an Account?</a>
+    </div>
+  </body>
+</html>

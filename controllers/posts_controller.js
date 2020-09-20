@@ -3,6 +3,14 @@ const Post = require('../models/posts.js')
 const postSeed = require('../models/seed.js')
 const posts = express.Router()
 
+const isAuthenticated = (req, res, next) => {
+  if(req.session.currentUser) {
+    return next()
+  } else {
+    res.redirect('/sessions/new')
+  }
+}
+
 // seed
 posts.get('/seed', (req, res) => {
   Post.create(postSeed, (error, data) => {
@@ -11,21 +19,25 @@ posts.get('/seed', (req, res) => {
 });
 
 // new
-posts.get('/new', (req, res) => {
-  res.render('posts/new.ejs')
+posts.get('/new', isAuthenticated, (req, res) => {
+  res.render(
+    'posts/new.ejs',
+    {currentUser: req.session.currentUser}
+  )
 });
 
 // edit
-posts.get('/:id/edit', (req, res) => {
+posts.get('/:id/edit', isAuthenticated, (req, res) => {
   Post.findById(req.params.id, (error, foundPost) => {
     res.render('posts/edit.ejs', {
-      post: foundPost
+      post: foundPost,
+      currentUser: req.session.currentUser
     });
   });
 });
 
 // delete
-posts.delete('/:id', (req, res) => {
+posts.delete('/:id', isAuthenticated, (req, res) => {
   Post.findByIdAndRemove(req.params.id, (err, deletedPost) => {
     res.redirect('/toolow')
   });
@@ -36,7 +48,8 @@ posts.get('/:id', (req, res) => {
   Post.findById(req.params.id, (error, foundPost) => {
     res.render(
       'posts/show.ejs', {
-        post: foundPost
+        post: foundPost,
+        currentUser: req.session.currentUser
     })
   })
 })
@@ -59,7 +72,8 @@ posts.post('/', (req, res) => {
 posts.get('/', (req, res) => {
   Post.find({}, (error, allPosts) => {
     res.render('posts/index.ejs', {
-      posts: allPosts
+      posts: allPosts,
+      currentUser: req.session.currentUser
     })
   })
 })

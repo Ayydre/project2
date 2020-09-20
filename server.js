@@ -1,5 +1,6 @@
 //Dependencies
 const express = require('express');
+const session = require('express-session')
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
@@ -35,9 +36,21 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
+app.use(
+  session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false
+  })
+)
+
 
 const postsController = require('./controllers/posts_controller.js')
 app.use('/toolow', postsController)
+const userController = require('./controllers/users_controller.js')
+app.use('/users', userController)
+const sessionsController = require('./controllers/sessions_controller.js')
+app.use('/sessions', sessionsController)
 
 // Routes
 app.get('/' , (req, res) => {
