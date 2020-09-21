@@ -4,12 +4,15 @@
 <%- include ('../partials/head.ejs') %>
 <!-- ============================ -->
     <body>
-      <div class="header">
-       <a href="/toolow" class="logo">TooLowForComfort</a>
-       </div>
       <nav>
         <%- include ('../partials/nav.ejs') %>
       </nav>
+      <!-- ==========HEADER========== -->
+        <%- include ('../partials/header.ejs') %>
+      <!-- ========================== -->
+      <!-- ==========TABS========== -->
+        <%- include ('../partials/tabs.ejs') %>
+      <!-- ========================== -->
       <div class="container">
         <div class="text-area">
         <h2 class="add">New Post</h2>
@@ -24,5 +27,9 @@
         </form>
         </div>
       </div>
+      <!-- ==========FOOTER========== -->
+        <%- include ('../partials/footer.ejs') %>
+      <!-- ========================== -->
+      <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     </body>
 </html>

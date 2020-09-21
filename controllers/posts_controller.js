@@ -43,6 +43,16 @@ posts.delete('/:id', isAuthenticated, (req, res) => {
   });
 });
 
+// forum page
+posts.get('/forum', (req, res) => {
+  Post.find({}, (error, allPosts) => {
+    res.render('posts/forum.ejs', {
+      posts: allPosts,
+      currentUser: req.session.currentUser
+    })
+  })
+})
+
 // show
 posts.get('/:id', (req, res) => {
   Post.findById(req.params.id, (error, foundPost) => {
@@ -64,7 +74,7 @@ posts.put('/:id', (req, res) => {
 // create
 posts.post('/', (req, res) => {
   Post.create(req.body, (error, createdPost) => {
-    res.redirect('/toolow')
+    res.redirect('/toolow/forum')
   })
 })
 
