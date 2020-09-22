@@ -14,10 +14,6 @@ body {
 
 .container {
  width: 90%;
- /* height: 100vh; */
- /* display: grid;
- grid-template-columns: 70% 20%;
- column-gap: 10%; */
 }
 
 /* ==================HEADER================== */
@@ -464,6 +460,19 @@ nav {
   width: 100%;
   text-transform: uppercase;
   margin-top: 20px;
+  transition: 0.6s all;
+}
+
+.buy-btn:hover {
+  background-color: #e63946;
+}
+
+.buy-btn:hover span{
+  display: none;
+}
+
+.buy-btn:hover:before {
+  content: "SOLD OUT"
 }
 
 /* ==================ABOUT================== */
@@ -511,6 +520,103 @@ nav {
 
 .address {
   margin: 0;
+}
+
+/* ==================SIGNUP/LOGIN================== */
+.container-new {
+  width: 90%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  border: 1px solid #8b8b8b;
+  border-radius: 3px;
+  margin-top: 50px;
+}
+
+.user-title, .edit-new-title {
+  font-family: 'Lobster Two', cursive;
+  font-size: 40px;
+  margin: 30px 0;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%
+}
+
+input[type=text], input[type=password] {
+  width: 80%;
+  height: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  padding: 3px;
+  margin-bottom: 10px;
+}
+
+.submit {
+  background-color: white;
+  color: rgb(65, 65, 65);
+  width: 80%;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin-top: 20px;
+  transition: 0.3s all;
+}
+
+.submit:hover {
+  cursor: pointer;
+  background-color: #a8dadc;
+}
+
+.dont-have {
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  color: rgb(78, 96, 205);
+  transition: 0.3s all;
+}
+
+.dont-have:hover {
+  text-decoration: underline;
+}
+
+/* ==================FOOTER================== */
+.text-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 700px;
+  height: 700px;
+  border: 1px solid #8b8b8b;
+  border-radius: 3px;
+  margin-top: 50px;
+}
+
+.submit-2 {
+  background-color: white;
+  color: rgb(65, 65, 65);
+  width: 80%;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin-top: 20px;
+  transition: 0.3s all;
+}
+
+.submit-2:hover {
+  cursor: pointer;
+  background-color: #e63946;
 }
 
 /* ==================FOOTER================== */

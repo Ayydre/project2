@@ -13,17 +13,17 @@
       <!-- ==========TABS========== -->
         <%- include ('../partials/tabs.ejs') %>
       <!-- ========================== -->
-      <div class="container">
+      <div class="container-new">
         <div class="text-area">
-        <h2 class="add">Edit Post</h2>
-        <form action="/toolow/<%=posts.id;%>?_method=PUT" method="POST">
+        <h2 class="edit-new-title">Edit Post</h2>
+        <form action="/toolow/<%=posts.id;%>?_method=PUT" method="POST" class="inputs">
           <input type="text" name="name" value="<%=posts.name;%>"/><br/>
           <input type="text" name="car" value="<%=posts.car;%>"/><br/>
           <input type="text" name="description" value="<%=posts.description;%>"/><br/>
           <input type="text" name="img" value="<%=posts.img;%>"/><br/>
           <input type="text" name="img2" value="<%=posts.img2;%>"/><br/>
           <input type="text" name="img3" value="<%=posts.img3;%>"/><br/>
-          <input type="submit" value="Save Edit" class="submit"/>
+          <input type="submit" value="Save Edit" class="submit-2"/>
         </form>
         </div>
       </div>

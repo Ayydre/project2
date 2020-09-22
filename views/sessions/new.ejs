@@ -13,15 +13,17 @@
     <!-- ==========TABS========== -->
       <%- include ('../partials/tabs.ejs') %>
     <!-- ========================== -->
-    <div class="container">
-      <h1>Log In</h1>
-      <form action="/sessions" method="POST">
-        User Name: <input type="text" name="username" required/>
-        Password: <input type="password" name="password" />
-        <input type="submit" value="Submit">
+    <div class="container-new">
+      <div class="user">
+      <h1 class="user-title">Log In</h1>
+      <form action="/sessions" method="POST" class="inputs">
+        <input type="text" name="username" required placeholder="Username"/>
+        <input type="password" name="password" placeholder="Password"/>
+        <input type="submit" value="Log In" class="submit">
       </form>
       <br/>
-      <a href="/users/new">Don't have an Account?</a>
+      <a href="/users/new" class="dont-have">Don't have an Account?</a>
+      </div>
     </div>
     <!-- ==========FOOTER========== -->
       <%- include ('../partials/footer.ejs') %>
