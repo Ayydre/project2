@@ -30,7 +30,7 @@ posts.get('/new', isAuthenticated, (req, res) => {
 posts.get('/:id/edit', isAuthenticated, (req, res) => {
   Post.findById(req.params.id, (error, foundPost) => {
     res.render('posts/edit.ejs', {
-      post: foundPost,
+      posts: foundPost,
       currentUser: req.session.currentUser
     });
   });
@@ -53,12 +53,52 @@ posts.get('/forum', (req, res) => {
   })
 })
 
+// About page
+posts.get('/about', (req, res) => {
+  Post.find({}, (error, allPosts) => {
+    res.render('posts/about.ejs', {
+      posts: allPosts,
+      currentUser: req.session.currentUser
+    })
+  })
+})
+
+// Contact page
+posts.get('/contact', (req, res) => {
+  Post.find({}, (error, allPosts) => {
+    res.render('posts/contact.ejs', {
+      posts: allPosts,
+      currentUser: req.session.currentUser
+    })
+  })
+})
+
+// show shirt
+posts.get('/show/shirt', (req, res) => {
+  Post.find({}, (error, allPosts) => {
+    res.render('posts/show-shirt.ejs', {
+      posts: allPosts,
+      currentUser: req.session.currentUser
+    })
+  })
+})
+
+// show sticker
+posts.get('/show/sticker', (req, res) => {
+  Post.find({}, (error, allPosts) => {
+    res.render('posts/show-sticker.ejs', {
+      posts: allPosts,
+      currentUser: req.session.currentUser
+    })
+  })
+})
+
 // show
 posts.get('/:id', (req, res) => {
   Post.findById(req.params.id, (error, foundPost) => {
     res.render(
       'posts/show.ejs', {
-        post: foundPost,
+        posts: foundPost,
         currentUser: req.session.currentUser
     })
   })

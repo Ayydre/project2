@@ -9,10 +9,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 .container {
  width: 90%;
+ /* height: 100vh; */
  /* display: grid;
  grid-template-columns: 70% 20%;
  column-gap: 10%; */
@@ -54,6 +56,7 @@ nav {
 
 .elements {
   width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: 70% 20%;
   column-gap: 10%;
@@ -143,7 +146,6 @@ nav {
 /* ==================HOME================== */
 .shop {
   width: 100%;
-  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -166,7 +168,7 @@ nav {
 }
 
 .img-home {
-  width: 80%;
+  width: 70%;
   border-radius: 3px;
   margin-bottom: 20px;
   transition: 0.3s all;
@@ -280,14 +282,14 @@ nav {
   margin-top: 20px;
 }
 
-ion-icon {
+.ion-icon {
   font-size: 40px;
   margin: 20px 5px;
   color: rgb(0, 0, 0);
   transition: 0.3s all;
 }
 
-ion-icon:hover {
+.ion-icon:hover {
   transform: translate(0, -5px);
   color: rgb(101, 101, 101);
 }
@@ -362,6 +364,155 @@ ion-icon:hover {
   background-color: rgb(168, 168, 168);
 }
 
+/* ==================SHOW SHOP================== */
+.elements-2 {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 60% 30%;
+  column-gap: 10%;
+}
+
+/* carousel  */
+.slideshow {
+  max-width: 100%;
+  position: relative;
+}
+
+.slide {
+  display: none;
+}
+
+.shirt {
+  width: 100%;
+}
+
+.sticker {
+  width: 80%;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: black;
+  font-weight: 600;
+  font-size: 18px;
+  transition: 0.4s all;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  color: white;
+  background-color: rgba(0,0,0,0.6);
+}
+``
+.show-description {
+  margin-top: 50px;
+  padding: 15px;
+  height: 60%;
+}
+
+.desc, .price {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+.price {
+  margin-top: 20px;
+}
+
+.line-show {
+  background-color: rgb(190, 190, 190);
+  width: 100%;
+  height: 1px;
+  margin: 30px 0;
+}
+
+.item-specs {
+  list-style: none;
+  margin-bottom: 40px;
+}
+
+.spec {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.size, .oos {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.buy-btn {
+  background-color: #a8dadc;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+  width: 100%;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+/* ==================ABOUT================== */
+.elements-3 {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 70% 20%;
+  column-gap: 10%;
+}
+
+.about-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+.boys {
+  width: 100%;
+}
+
+/* ==================CONTACT US================== */
+.line-contact {
+  background-color: black;
+  width: 70%;
+  height: 6px;
+  margin-left: 20px;
+}
+
+.contact-list {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.contact-info {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.address {
+  margin: 0;
+}
+
 /* ==================FOOTER================== */
 footer {
   background-color: rgb(27, 27, 27);
@@ -403,6 +554,17 @@ footer {
  align-items: center;
 }
 
+.icon {
+  color: white;
+  font-size: 25px;
+  margin-right: 5px;
+  transition: 0.3s all;
+}
+
+.icon:hover {
+  color: rgb(164, 164, 164);
+}
+
 .footer-list-tab {
   text-decoration: none;
   color: white;
@@ -418,4 +580,8 @@ footer {
 
 .click-tab:hover {
   color: rgb(164, 164, 164);
+}
+
+.footer-container {
+  width: 100%;
 }

@@ -17,15 +17,15 @@
         <div class="elements">
           <div class="show">
             <div class="show-title">
-              <h1 class="show-name"><%=post.name;%>'s <%=post.car%>.</h1>
+              <h1 class="show-name"><%=posts.name;%>'s <%=posts.car%>.</h1>
             </div>
-            <p class="show-text"><%=post.description;%></p><br/>
-            <img src="<%=post.img;%>" alt="car" class="img-show">
-            <img src="<%=post.img2;%>" alt="" class="img-show">
-            <img src="<%=post.img3;%>" alt="" class="img-show">
+            <p class="show-text"><%=posts.description;%></p><br/>
+            <img src="<%=posts.img;%>" alt="car" class="img-show">
+            <img src="<%=posts.img2;%>" alt="" class="img-show">
+            <img src="<%=posts.img3;%>" alt="" class="img-show">
           <div class="btns">
-            <button type="button" class="edit-btn"><a href="/toolow/<%=post.id;%>/edit" id="edit">edit</a></button>
-            <form action="/toolow/<%=post.id%>?_method=DELETE" method="POST">
+            <button type="button" class="edit-btn"><a href="/toolow/<%=posts.id;%>/edit" id="edit">edit</a></button>
+            <form action="/toolow/<%=posts.id%>?_method=DELETE" method="POST">
               <input type="submit" value="DELETE" class="delete"/>
             </form>
           </div>

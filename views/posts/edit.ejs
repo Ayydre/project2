@@ -16,13 +16,13 @@
       <div class="container">
         <div class="text-area">
         <h2 class="add">Edit Post</h2>
-        <form action="/toolow/<%=post.id;%>?_method=PUT" method="POST">
-          <input type="text" name="name" value="<%=post.name;%>"/><br/>
-          <input type="text" name="car" value="<%=post.car;%>"/><br/>
-          <input type="text" name="description" value="<%=post.description;%>"/><br/>
-          <input type="text" name="img" value="<%=post.img;%>"/><br/>
-          <input type="text" name="img2" value="<%=post.img2;%>"/><br/>
-          <input type="text" name="img3" value="<%=post.img3;%>"/><br/>
+        <form action="/toolow/<%=posts.id;%>?_method=PUT" method="POST">
+          <input type="text" name="name" value="<%=posts.name;%>"/><br/>
+          <input type="text" name="car" value="<%=posts.car;%>"/><br/>
+          <input type="text" name="description" value="<%=posts.description;%>"/><br/>
+          <input type="text" name="img" value="<%=posts.img;%>"/><br/>
+          <input type="text" name="img2" value="<%=posts.img2;%>"/><br/>
+          <input type="text" name="img3" value="<%=posts.img3;%>"/><br/>
           <input type="submit" value="Save Edit" class="submit"/>
         </form>
         </div>

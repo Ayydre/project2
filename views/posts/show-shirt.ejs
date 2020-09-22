@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <!-- ===========HEAD============= -->
+    <%- include ('../partials/head.ejs') %>
+  <!-- ============================ -->
+    <body>
+      <nav>
+        <%- include ('../partials/nav.ejs') %>
+      </nav>
+      <!-- ==========HEADER========== -->
+        <%- include ('../partials/header.ejs') %>
+      <!-- ========================== -->
+      <!-- ==========TABS========== -->
+        <%- include ('../partials/tabs.ejs') %>
+      <!-- ========================== -->
+      <!-- used this link to help with this https://www.w3schools.com/howto/howto_js_slideshow.asp -->
+      <div class="container">
+        <div class="elements-2">
+          <div class="show">
+            <div class="slideshow">
+              <div class="slide">
+                <img src="https://i.imgur.com/TnKKXWT.jpg" alt="tee" class="shirt">
+              </div>
+              <div class="slide">
+                <img src="https://i.imgur.com/Vms7l7B.jpg" alt="tee" class="shirt">
+              </div>
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+          </div>
+          <div class="show-description">
+            <h2 class="desc">2l4c Limited Edition Tee</h2>
+            <h2 class="price">$25</h2>
+            <div class="line-show"></div>
+            <ul class="item-specs">
+              <li class="spec">Printed on premium fitted t-shirts.</li>
+              <li class="spec">100% Cotton</li>
+              <li class="spec">Made in the USA - Printed in Florida.</li>
+            </ul>
+            <h4 class="size">Size:</h4>
+            <h4 class="oos">Out Of Stock</h4>
+            <button type="button" name="button" class="buy-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- ==========FOOTER========== -->
+        <%- include ('../partials/footer.ejs') %>
+      <!-- ========================== -->
+    </body>
+</html>
