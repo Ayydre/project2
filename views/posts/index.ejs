@@ -15,18 +15,23 @@
       <!-- ========================== -->
       <div class="container">
         <div class="elements">
-        <!-- <div class="posts">
+        <div class="shop">
           <div class="ft-label">
-          <h2 class="feature">Forum</h2>
-          <div class="line"></div>
+          <h1 class="feature-home">Shop</h1>
+          <div class="line-home"></div>
           </div>
-          <% for(let key in posts) { %>
-            <div class="user-post">
-            <a href="/toolow/<%=posts[key].id;%>" class="img"><img src="<%=posts[key].img;%>" alt="car image" class="img"></a>
-            <a href="/toolow/<%=posts[key].id;%>" class="info"><h2 class="info"><%=posts[key].name;%>'s <%=posts[key].car;%></h2></a>
-            </div>
-          <% } %>
-        </div> -->
+          <div class="merch">
+            <ul class="home-ul">
+              <li class="home-li"><a href="/toolow/show/shirt"><img src="https://i.imgur.com/TnKKXWT.jpg" alt="t-shirt" class="img-home"></a>
+              <a href="/toolow/show/shirt" class="info-home"><h4 class="info-home">2L4C Limited Edition Tee</h4></a></li>
+              <li class="home-li"><a href="/toolow/show/sticker"><img src="https://i.imgur.com/X6DSe4r.jpg" class="img-home"></a>
+              <a href="/toolow/show/sticker" class="info-home"><h4 class="info-home">2L4C Sticker</h4></a></li>
+            </ul>
+          </div>
+          <div class="soon">
+          <h2>More Merch Coming Soon!</h2>
+          </div>
+        </div>
         <!-- ==========SIDEBAR========== -->
           <%- include ('../partials/sidebar.ejs') %>
         <!-- ========================== -->
@@ -35,6 +40,5 @@
       <!-- ==========FOOTER========== -->
         <%- include ('../partials/footer.ejs') %>
       <!-- ========================== -->
-      <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     </body>
 </html>

@@ -14,21 +14,29 @@
         <%- include ('../partials/tabs.ejs') %>
       <!-- ========================== -->
       <div class="container">
-        <div class="show">
-          <img src="<%=post.img;%>" alt="car"><br/>
-          <h1><%=post.name;%>'s <%=post.car%>.</h1>
-          <p><%=post.description;%></p><br/>
-          <img src="<%=post.img2;%>" alt="">
-          <img src="<%=post.img3;%>" alt="">
+        <div class="elements">
+          <div class="show">
+            <div class="show-title">
+              <h1 class="show-name"><%=post.name;%>'s <%=post.car%>.</h1>
+            </div>
+            <p class="show-text"><%=post.description;%></p><br/>
+            <img src="<%=post.img;%>" alt="car" class="img-show">
+            <img src="<%=post.img2;%>" alt="" class="img-show">
+            <img src="<%=post.img3;%>" alt="" class="img-show">
+          <div class="btns">
+            <button type="button" class="edit-btn"><a href="/toolow/<%=post.id;%>/edit" id="edit">edit</a></button>
+            <form action="/toolow/<%=post.id%>?_method=DELETE" method="POST">
+              <input type="submit" value="DELETE" class="delete"/>
+            </form>
+          </div>
         </div>
-        <button type="button"><a href="/toolow/<%=post.id;%>/edit" id="edit">edit</a></button>
-        <form action="/toolow/<%=post.id%>?_method=DELETE" method="POST">
-          <input type="submit" value="DELETE" class="delete"/>
-        </form>
+        <!-- ==========SIDEBAR========== -->
+          <%- include ('../partials/sidebar.ejs') %>
+        <!-- ========================== -->
+        </div>
       </div>
       <!-- ==========FOOTER========== -->
         <%- include ('../partials/footer.ejs') %>
       <!-- ========================== -->
-      <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     </body>
 </html>
