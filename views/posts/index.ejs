@@ -41,7 +41,9 @@
           <a href="/toolow/forum" class="blog-link"><div class="blog-link">post your car to get featured ></div></a>
           <div class="blog-img">
           <% for(let key in posts) { %>
+            <a href="/toolow/<%=posts[key].id;%>"class="img-grid">
             <img src="<%=posts[key].img;%>" alt="car image" class="img-grid"></img>
+            </a>
           <% } %>
           </div>
         </div>
