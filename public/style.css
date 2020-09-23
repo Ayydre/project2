@@ -1022,13 +1022,6 @@ footer {
   .container {
    width: 90%;
   }
-  .sidebar {
-    margin-top: 100px;
-    height: 60%;
-    width: 80px;
-    padding: 12px;
-    border-radius: 3px;
-  }
   .img-home {
     width: 60%;
     border-radius: 3px;
@@ -1087,6 +1080,6 @@ footer {
   }
   .img-grid {
     width: 100%;
-    height: 180px;
+    height: 220px;
   }
 }
