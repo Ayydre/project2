@@ -1,4 +1,5 @@
 const express = require('express')
+const User = require('../models/users.js')
 const Post = require('../models/posts.js')
 const postSeed = require('../models/seed.js')
 const posts = express.Router()
@@ -38,8 +39,14 @@ posts.get('/:id/edit', isAuthenticated, (req, res) => {
 
 // delete
 posts.delete('/:id', isAuthenticated, (req, res) => {
-  Post.findByIdAndRemove(req.params.id, (err, deletedPost) => {
-    res.redirect('/toolow')
+  Post.findById(req.params.id, (err, foundPost) => {
+    if(req.session.currentUser.role === 'admin' || req.session.currentUser._id == foundPost.author) {
+      foundPost.remove(req.params.id, (err, deletedPost) => {
+        res.redirect('/toolow/forum')
+      });
+    } else {
+      res.status(403).send('<a href="/toolow">Not Allowed</a>')
+    }
   });
 });
 
@@ -106,17 +113,34 @@ posts.get('/:id', (req, res) => {
 
 // update
 posts.put('/:id', (req, res) => {
-  Post.findByIdAndUpdate(req.params.id, req.body, {new: true}, (error, updatedModel) => {
-    res.redirect('/toolow/' + req.params.id)
+  Post.findById(req.params.id, (error, foundPost) => {
+    if (req.session.currentUser.role === 'admin' || req.session.currentUser._id == foundPost.author) {
+      foundPost.update({$set: req.body}, (err, updatedPost) => {
+        res.redirect('/toolow/' + req.params.id)
+      });
+    } else {
+      res.status(403).send('<a href="/toolow">Not Allowed</a>')
+    }
   });
 });
 
 // create
 posts.post('/', (req, res) => {
-  Post.create(req.body, (error, createdPost) => {
-    res.redirect('/toolow/forum')
-  })
-})
+  User.findById(req.session.currentUser._id, (err, foundUser) => {
+    req.body.author = foundUser._id
+    Post.create(req.body, (err, createdPost) => {
+      if(foundUser.posts){
+        foundUser.posts.push(createdPost)
+      } else {
+        foundUser.posts = [createdPost]
+      }
+      foundUser.save((err, data) => {
+        res.redirect('/toolow/forum')
+      });
+    });
+  });
+});
+
 
 // index
 posts.get('/', (req, res) => {

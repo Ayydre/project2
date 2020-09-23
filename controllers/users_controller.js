@@ -11,6 +11,7 @@ users.get('/new', (req, res) => {
 
 users.post('/', (req, res) => {
   req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
+  req.body.role = 'base'
   User.create(req.body, (err, createdUser) => {
     console.log('User is created', createdUser);
     res.redirect('/toolow')
