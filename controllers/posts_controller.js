@@ -45,8 +45,8 @@ posts.delete('/:id', isAuthenticated, (req, res) => {
         res.redirect('/toolow/forum')
       });
     } else {
-      res.status(403).send('<a href="/toolow">Not Allowed</a>')
-    }
+      res.status(403).redirect('/toolow/error') /* send('<a href="/toolow">Not Allowed</a>') */
+    };
   });
 });
 
@@ -100,6 +100,16 @@ posts.get('/show/sticker', (req, res) => {
   })
 })
 
+// show not allowed
+posts.get('/error', (req, res) => {
+  Post.find({}, (error, allPosts) => {
+    res.render('posts/notadmin.ejs', {
+      posts: allPosts,
+      currentUser: req.session.currentUser
+    })
+  })
+})
+
 // show
 posts.get('/:id', (req, res) => {
   Post.findById(req.params.id, (error, foundPost) => {
@@ -119,7 +129,7 @@ posts.put('/:id', (req, res) => {
         res.redirect('/toolow/' + req.params.id)
       });
     } else {
-      res.status(403).send('<a href="/toolow">Not Allowed</a>')
+      res.status(403).redirect('/toolow/error') /* send('<a href="/toolow">Not Allowed</a>') */
     }
   });
 });

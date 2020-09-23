@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <!-- ===========HEAD============= -->
+    <%- include ('../partials/head.ejs') %>
+  <!-- ============================ -->
+    <body>
+      <!-- ==========NAV========== -->
+        <%- include ('../partials/nav.ejs') %>
+      <!-- ========================== -->
+      <!-- ==========HEADER========== -->
+        <%- include ('../partials/header.ejs') %>
+      <!-- ========================== -->
+      <div class="container">
+        <div class="elements-4">
+          <div class="error-msg">
+            <h1 class="status403">403</h1>
+            <div class="message">
+            <h2 class="oops">Oops! Request Forbidden</h2>
+            <h3 class="click-error">Sorry, it appears you aren't allowed to do that.</h3>
+            <a href="/toolow/forum" class="return">Return to page</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ==========FOOTER========== -->
+        <%- include ('../partials/footer.ejs') %>
+      <!-- ========================== -->
+    </body>
+</html>
