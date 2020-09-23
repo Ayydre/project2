@@ -1,6 +1,7 @@
 const express = require('express')
 const User = require('../models/users.js')
 const Post = require('../models/posts.js')
+const Comment = require('../models/comment.js')
 const postSeed = require('../models/seed.js')
 const posts = express.Router()
 
@@ -45,7 +46,7 @@ posts.delete('/:id', isAuthenticated, (req, res) => {
         res.redirect('/toolow/forum')
       });
     } else {
-      res.status(403).redirect('/toolow/error') /* send('<a href="/toolow">Not Allowed</a>') */
+      res.status(403).redirect('/toolow/error')
     };
   });
 });
@@ -110,13 +111,33 @@ posts.get('/error', (req, res) => {
   })
 })
 
+// comments
+posts.post('/:id/comment', isAuthenticated, (req, res) => {
+  req.body.postId = req.params.id;
+  Post.findById(req.params.id, (err, foundPost) => {
+    Comment.create(req.body, (err, createdComment) => {
+      if(foundPost.comments){
+        foundPost.comments.push(createdComment)
+      } else {
+        foundPost.comments = [createdComment]
+      }
+      foundPost.save((err, data) => {
+        res.redirect('/toolow/' + req.params.id)
+      })
+    })
+  })
+})
+
 // show
 posts.get('/:id', (req, res) => {
   Post.findById(req.params.id, (error, foundPost) => {
-    res.render(
-      'posts/show.ejs', {
-        posts: foundPost,
-        currentUser: req.session.currentUser
+    Comment.find({ postId: req.params.id }, (err, foundComment) => {
+      res.render(
+        'posts/show.ejs', {
+          posts: foundPost,
+          comment: foundComment,
+          currentUser: req.session.currentUser,
+      })
     })
   })
 })
@@ -129,7 +150,7 @@ posts.put('/:id', (req, res) => {
         res.redirect('/toolow/' + req.params.id)
       });
     } else {
-      res.status(403).redirect('/toolow/error') /* send('<a href="/toolow">Not Allowed</a>') */
+      res.status(403).redirect('/toolow/error')
     }
   });
 });
@@ -150,7 +171,6 @@ posts.post('/', (req, res) => {
     });
   });
 });
-
 
 // index
 posts.get('/', (req, res) => {

@@ -29,6 +29,25 @@
               <input type="submit" value="DELETE" class="delete"/>
             </form>
           </div>
+          <div class="comment-area-1">
+            <h3 class="comment-title">Comments</h3>
+            <ul class="comment-list">
+              <% for(let key in comment) { %>
+              <li class="comment">
+                <span class="comment-text comment-name"><%=comment[key].usersname%></span>
+                <span class="comment-text"><%=comment[key].comment%></span>
+              </li>
+              <% } %>
+            </ul>
+          </div>
+          <div class="comment-area-2">
+            <form class="comment-section" action="/toolow/<%=posts.id;%>/comment" method="POST">
+              <h3 class="make-comment">Leave a Comment</h3>
+              <input type="text" name="usersname" placeholder="name" class="myname"/>
+              <textarea name="comment" rows="6" class="textarea" placeholder="comment"></textarea>
+              <input type="submit" value="Add Comment" class="submit-3"/>
+            </form>
+          </div>
         </div>
         <!-- ==========SIDEBAR========== -->
           <%- include ('../partials/sidebar.ejs') %>
