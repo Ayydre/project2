@@ -293,7 +293,7 @@ nav {
   width: 180px;
   padding: 12px;
   border-radius: 3px;
-  background-color: #e5e5e5;
+  /* background-color: #e5e5e5; */
 }
 
 .social-links {
@@ -842,7 +842,6 @@ footer {
     width: 100%;
     padding: 12px;
     border-radius: 3px;
-    background-color: #e5e5e5;
   }
 }
 
@@ -853,7 +852,6 @@ footer {
     width: 80px;
     padding: 12px;
     border-radius: 3px;
-    background-color: #e5e5e5;
   }
 
   .ion-icon {
