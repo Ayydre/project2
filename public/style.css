@@ -245,6 +245,20 @@ nav {
   color: black;
 }
 
+.blog-link {
+  text-decoration: none;
+  color: black;
+  font-family: 'Roboto Mono', sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  transition: 0.3s all;
+}
+
+.blog-link:hover {
+  text-decoration: underline;
+}
+
 /* ==================FORUM================== */
 .posts {
   background-color: white;
