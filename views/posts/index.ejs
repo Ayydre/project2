@@ -33,6 +33,17 @@
           <%- include ('../partials/sidebar.ejs') %>
         <!-- ========================== -->
         </div>
+        <div class="blog-section">
+          <div class="ft-label">
+          <a href="/toolow/forum" class="home-blog-title"><h1 class="feature-home-blog">Blog</h1></a>
+          <div class="line-home"></div>
+          </div>
+          <div class="blog-img">
+          <% for(let key in posts) { %>
+            <img src="<%=posts[key].img;%>" alt="car image" class="img-grid"></img>
+          <% } %>
+          </div>
+        </div>
       </div>
       <!-- ==========FOOTER========== -->
         <%- include ('../partials/footer.ejs') %>

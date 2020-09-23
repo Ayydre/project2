@@ -217,6 +217,34 @@ nav {
   font-size: 30px;
 }
 
+.blog-section {
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.blog-img {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  grid-gap: 1%;
+}
+
+.img-grid {
+  width: 100%;
+  height: 220px;
+}
+
+.feature-home-blog {
+  font-family: 'Lobster Two', sans-serif;
+  font-style: italic;
+  font-size: 40px;
+}
+
+.home-blog-title {
+  text-decoration: none;
+  color: black;
+}
+
 /* ==================FORUM================== */
 .posts {
   background-color: white;
@@ -902,6 +930,10 @@ footer {
     font-family: 'Montserrat', sans-serif;
     transform: translateX(40px);
   }
+  .img-grid {
+    width: 100%;
+    height: 150px;
+  }
 }
 
 @media (min-width: 1920px) {
@@ -973,5 +1005,15 @@ footer {
     text-decoration: none;
     color: white;
     text-shadow: 3px 3px rgb(99, 99, 99);
+  }
+  .img-grid {
+    width: 100%;
+    height: 130px;
+  }
+  .blog-img {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-gap: 1%;
   }
 }
