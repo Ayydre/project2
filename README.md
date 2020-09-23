@@ -6,4 +6,4 @@ This website is for car enthusiasts that showcases their cars and posts them on 
 
 I used mongodb Atlas as my database to store my posts and heroku to host my project. Also used express and mongoose to make a full CRUD app. And lastly used css to style the website.
 
-In the future I would like to add a comment section on each post for users to be able to comment on other user's posts.
+In the future I will add functionality to the comments.
